@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  background-color: #141519;
+}
+
+/* Main background section */
+.genre-default {
+  height: 100vh;
+
+  /* Dark overlay + image */
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("./manga-background/background-default.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Simple Crunchyroll-style button */
+button {
+  background-color: #ff7a00;
+  color: white;
+
+  border: none;
+  border-radius: 5px;
+
+  padding: 10px 20px;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #ff9500;
+}
