@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anime Recommendation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Anime Recommendation</h1>
+      <p>Discover the next series to binge</p>
+    </header>
+
+    <main>
+      <section id="welcome-container">
+        <form id="welcome-form">
+          <h2>Before we start...</h2>
+          <input
+            type="text"
+            id="name"
+            placeholder="Enter your name"
+            required
+            minlength="2"
+            maxlength="20"
+          />
+          <button type="submit" id="start-btn">Start Quiz</button>
+        </form>
+      </section>
+
+      <section id="quiz-container" style="display: none">
+        <h2 class="question">Question Goes Here</h2>
+
+        <div class="answers">
+          <button>Option 1</button>
+          <button>Option 2</button>
+          <button>Option 3</button>
+          <button>Option 4</button>
+        </div>
+
+        <button id="next-btn">Next</button>
+      </section>
+
+      <section id="result-container"></section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
