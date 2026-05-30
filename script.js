@@ -8,7 +8,7 @@ let userName = "";
 
 const questions = [
   {
-    question: "You wake up and your reflection moves… but you don’t.",
+    question: "You wake up and your reflection moves… but you don't. What do you do?",
     answers: [
       { text: "Confront it immediately", genre: "action" },
       { text: "Try to understand the phenomenon", genre: "psychological" },
@@ -105,14 +105,38 @@ const questions = [
   },
 ];
 
-const scores ={
-    action:0,
-    adventure:0,
-    psychological:0,
-    sports:0,
-    romance:0,
-    supernatural:0,
-    comedy:0,
+const scores = {
+  action: 0,
+  adventure: 0,
+  psychological: 0,
+  sports: 0,
+  romance: 0,
+  supernatural: 0,
+  comedy: 0,
+};
+
+let currentQuestion = 0;
+
+const questionEl = document.querySelector(".question");
+const buttons = document.querySelectorAll(".answers button");
+let selectedGenre = null;
+
+function loadQuestion() {
+  const q = questions[currentQuestion];
+  questionEl.textContent = q.question;
+
+  buttons.forEach((btn, i) => {
+    btn.textContent = q.answers[i].text;
+
+    btn.onclick = () => {
+      scores[q.answers[i].genre]++;
+      currentQuestion++;
+
+      if (currentQuestion < questions.length) {
+        loadQuestion();
+      } 
+    };
+  });
 }
 
 form.addEventListener("submit", (event) => {
@@ -128,6 +152,6 @@ form.addEventListener("submit", (event) => {
   welcomeContainer.style.display = "none";
   quizContainer.style.display = "block";
 
-  document.querySelector(".question").textContent =
-    `Welcome ${userName}! You're walking and suddenly, you're being followed by a mysterious entity.`;
+  loadQuestion()
 });
+

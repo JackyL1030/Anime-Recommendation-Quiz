@@ -5,11 +5,9 @@ body {
   background-color: #141519;
 }
 
-/* Main background section */
 .genre-default {
   height: 100vh;
 
-  /* Dark overlay + image */
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url("./manga-background/background-default.jpg");
@@ -19,7 +17,6 @@ body {
   background-repeat: no-repeat;
 }
 
-/* Simple Crunchyroll-style button */
 button {
   background-color: #ff7a00;
   color: white;
@@ -35,7 +32,6 @@ button {
   cursor: pointer;
 }
 
-/* Button hover effect */
 button:hover {
   background-color: #ff9500;
 }
