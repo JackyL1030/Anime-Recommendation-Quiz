@@ -8,7 +8,8 @@ let userName = "";
 
 const questions = [
   {
-    question: "You wake up and your reflection moves… but you don't. What do you do?",
+    question:
+      "You wake up and your reflection moves… but you don't. What do you do?",
     answers: [
       { text: "Confront it immediately", genre: "action" },
       { text: "Try to understand the phenomenon", genre: "psychological" },
@@ -115,6 +116,16 @@ const scores = {
   comedy: 0,
 };
 
+const genreDescriptions = {
+  action: "You love excitement, battles, and high stakes",
+  adventure: "You enjoy exploration and discovering new worlds",
+  psychological: "You like deep mysteries and complex characters",
+  sports: "You enjoy competition and personal growth",
+  romance: "You appreciate relationships and emotional stories",
+  supernatural: "You enjoy magic, spirits, and the unknown",
+  comedy: "You love humor and lighthearted adventures.",
+};
+
 let currentQuestion = 0;
 
 const questionEl = document.querySelector(".question");
@@ -134,7 +145,7 @@ function loadQuestion() {
 
       if (currentQuestion < questions.length) {
         loadQuestion();
-      } else{
+      } else {
         showResults();
       }
     };
@@ -157,11 +168,10 @@ function showResults() {
 
   resultContainer.innerHTML = `
     <h2>${userName}, your recommended genre is: ${selectedGenre.toUpperCase()}</h2>
-  `;
+    <p>${genreDescriptions[selectedGenre]}</p>`;
 
   resultContainer.style.display = "block";
 }
-
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -176,6 +186,5 @@ form.addEventListener("submit", (event) => {
   welcomeContainer.style.display = "none";
   quizContainer.style.display = "block";
 
-  loadQuestion()
+  loadQuestion();
 });
-
