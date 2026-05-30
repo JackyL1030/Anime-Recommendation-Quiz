@@ -132,12 +132,36 @@ function loadQuestion() {
       scores[q.answers[i].genre]++;
       currentQuestion++;
 
-      if (currentQuestion <= questions.length) {
+      if (currentQuestion < questions.length) {
         loadQuestion();
-      } 
+      } else{
+        showResults();
+      }
     };
   });
 }
+
+function showResults() {
+  quizContainer.style.display = "none";
+
+  let highestScore = 0;
+
+  for (let genre in scores) {
+    if (scores[genre] > highestScore) {
+      highestScore = scores[genre];
+      selectedGenre = genre;
+    }
+  }
+
+  const resultContainer = document.getElementById("result-container");
+
+  resultContainer.innerHTML = `
+    <h2>${userName}, your recommended genre is: ${selectedGenre.toUpperCase()}</h2>
+  `;
+
+  resultContainer.style.display = "block";
+}
+
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
