@@ -132,7 +132,7 @@ function loadQuestion() {
       scores[q.answers[i].genre]++;
       currentQuestion++;
 
-      if (currentQuestion < questions.length) {
+      if (currentQuestion <= questions.length) {
         loadQuestion();
       } 
     };
