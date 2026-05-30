@@ -154,6 +154,7 @@ function loadQuestion() {
 
 function showResults() {
   quizContainer.style.display = "none";
+  document.querySelector("header").style.display = "none";
 
   let highestScore = 0;
 
@@ -163,14 +164,16 @@ function showResults() {
       selectedGenre = genre;
     }
   }
+  document.body.className = `genre-${selectedGenre}`;
 
-  const resultContainer = document.getElementById("result-container");
+  const resultContainer = document.getElementById("result-container"); 
+  resultContainer.style.display = "block";
 
   resultContainer.innerHTML = `
     <h2>${userName}, your recommended genre is: ${selectedGenre.toUpperCase()}</h2>
     <p>${genreDescriptions[selectedGenre]}</p>`;
 
-  resultContainer.style.display = "block";
+  
 }
 
 form.addEventListener("submit", (event) => {
