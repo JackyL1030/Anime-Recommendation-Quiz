@@ -2,6 +2,7 @@
 An interactive personality-based quiz that recommends anime based on user preferences. Built using HTML, CSS, and Javascript. The user will answer a series of multiple-choice questions. At the end of the quiz, the user will receive a recommended anime genre, along with three anime recommendations displated as image cards.
 
 ## Live Demo
+https://jackyl1030.github.io/Anime-Recommendation-Quiz/
 
 
 ## Features 
