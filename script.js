@@ -221,7 +221,7 @@ const recommendations = {
       title: "Hajime no Ippo",
       image: "./anime-recommendations/sports-ippo.jpg",
     },
-    { title: "Slam Dunk", image: "./anime-recommendations/sports-SD.jpg" },
+    { title: "Slam Dunk", image: "./anime-recommendations/sports-SD.jpg", },
     { title: "Eyeshield 21", image: "./anime-recommendations/sports-eye.jpg" },
   ],
   romance: [
