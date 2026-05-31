@@ -9,81 +9,81 @@ let userName = "";
 const questions = [
   {
     question:
-      "You wake up and your reflection moves… but you don't. What do you do?",
+      "You have a completely free weekend. What sounds most appealing?",
     answers: [
-      { text: "Confront it immediately", genre: "action" },
-      { text: "Try to understand the phenomenon", genre: "psychological" },
+      { text: "Training hard to master a skill", genre: "sports" },
+      { text: "Exploring a place you've never been", genre: "adventure" },
       {
-        text: "Look for a logical explanation in the world",
-        genre: "adventure",
+        text: "Pulling harmless pranks on friends",
+        genre: "comedy",
       },
-      { text: "Laugh nervously and joke about it", genre: "comedy" },
+      { text: "Investing a strange mystery nobody can explain", genre: "supernatural" },
     ],
   },
   {
-    question: "A dragon lands in front of you, watching silently.",
+    question: "Which type of protagonist do you find most interesting?",
     answers: [
-      { text: "Prepare to fight", genre: "action" },
-      { text: "Try to communicate with it", genre: "supernatural" },
-      { text: "Study its behavior carefully", genre: "psychological" },
-      { text: "Try to befriend it", genre: "romance" },
+      { text: "Someone willing to fight impossible odds", genre: "action" },
+      { text: "Someone trying to understand their own mind", genre: "psychological" },
+      { text: "Someone searching for true love", genre: "romance" },
+      { text: "Someone with powers beyond normal understanding", genre: "supernatural" },
     ],
   },
   {
-    question: "You find a book that changes reality when read.",
+    question: "What motivates you the most?",
     answers: [
-      { text: "Use it to gain power", genre: "action" },
-      { text: "Experiment cautiously", genre: "adventure" },
-      { text: "Analyze its rules and structure", genre: "psychological" },
-      { text: "Treat it like a prank waiting to happen", genre: "comedy" },
+      { text: "Winning and proving yourself", genre: "sports" },
+      { text: "Protecting people you care about", genre: "action" },
+      { text: "Discovering what's beyond the horizon", genre: "adventure" },
+      { text: "Making others laugh", genre: "comedy" },
     ],
   },
   {
-    question: "Time suddenly freezes except for you.",
+    question: "Which setting sounds most exciting?",
     answers: [
-      { text: "Find the source and stop it", genre: "action" },
-      { text: "Explore the frozen world", genre: "adventure" },
-      { text: "Test whether your mind is stable", genre: "psychological" },
-      { text: "Mess with people for fun", genre: "comedy" },
+      { text: "A world filled with ancient secrets and forgotten lands", genre: "adventure" },
+      { text: "A city where unusual paranormal events happen every day", genre: "supernatural" },
+      { text: "A competitive arena where the best competes", genre: "sports" },
+      { text: "A tense battle of wits between geniuses", genre: "psychological" },
     ],
   },
   {
-    question: "You are invited to a mysterious tournament.",
+    question: "Which conflict would you rather watch unfold?",
     answers: [
-      { text: "Train and compete seriously", genre: "sports" },
-      { text: "Study opponents before acting", genre: "psychological" },
-      { text: "Jump in and fight your way through", genre: "action" },
-      { text: "Treat it like entertainment", genre: "comedy" },
+      { text: "Rivals competing for a championship", genre: "sports" },
+      { text: "Two people slowly falling for each other", genre: "romance" },
+      { text: "Heroes battling a dangerous threat", genre: "action" },
+      { text: "A group surviving bizarre supernatural events", genre: "supernatural" },
     ],
   },
   {
-    question: "A door appears in your room every night.",
+    question: "Which trait do you admire most?",
     answers: [
-      { text: "Force it open", genre: "action" },
-      { text: "Follow where it leads", genre: "adventure" },
-      { text: "Record patterns carefully", genre: "psychological" },
+      { text: "Determination under pressure", genre: "action" },
+      { text: "Curiosity and wanderlust", genre: "adventure" },
+      { text: "Emotional honesty", genre: "romance" },
       {
-        text: "Ignore it… probably nothing (but check anyway)",
-        genre: "supernatural",
+        text: "Cleverness and strategic thinking",
+        genre: "psychological",
       },
     ],
   },
   {
-    question: "A ghost starts speaking to you like it knows you.",
+    question: "Your ideal story ending is:",
     answers: [
-      { text: "Confront it", genre: "action" },
-      { text: "Ask what it wants", genre: "supernatural" },
-      { text: "Question your sanity", genre: "psychological" },
-      { text: "Roast it casually", genre: "comedy" },
+      { text: "The hero triumphs after a fierce struggle", genre: "action" },
+      { text: "The characters find happiness together", genre: "romance" },
+      { text: "The mystery leaves you questioning everything", genre: "psychological" },
+      { text: "Everyone shares one last laugh", genre: "comedy" },
     ],
   },
   {
-    question: "You gain a strange power overnight.",
+    question: "Which event would you attend?",
     answers: [
-      { text: "Use it immediately", genre: "action" },
-      { text: "Test its limits carefully", genre: "adventure" },
-      { text: "Analyze how it affects reality", genre: "psychological" },
-      { text: "Accidentally cause chaos while experimenting", genre: "comedy" },
+      { text: "A martial arts tournament", genre: "action" },
+      { text: "An expedition into uncharted territory", genre: "adventure" },
+      { text: "A magical festival filled with spirits and legends", genre: "supernatural" },
+      { text: "A school talent show full of funny moments", genre: "comedy" },
     ],
   },
   {
@@ -96,12 +96,30 @@ const questions = [
     ],
   },
   {
-    question: "You see a future version of yourself in a dream.",
+    question: "Which power would you rather have?",
     answers: [
-      { text: "Try to change your fate", genre: "action" },
-      { text: "Search for meaning in the vision", genre: "psychological" },
-      { text: "Go on a journey to understand it", genre: "adventure" },
-      { text: "Assume it's just your brain trolling you", genre: "comedy" },
+      { text: "Incredible combat abilities", genre: "action" },
+      { text: "The ability to communicate with supernatural beings", genre: "supernatural" },
+      { text: "The ability to always know the right strategy", genre: "psychological" },
+      { text: "The courage to explore anywhere", genre: "adventure" },
+    ],
+  },
+  {
+    question: "Which group would you join?",
+    answers: [
+      { text: "An elite sports team", genre: "sports" },
+      { text: "A guild of adventurersn", genre: "adventure" },
+      { text: "A club dedicated to helping people find love", genre: "romance" },
+      { text: "A group of eccentric comedians", genre: "comedy" },
+    ],
+  },
+  {
+    question: "What kind of emotion do you most want from a story?",
+    answers: [
+      { text: "Excitement and adrenaline", genre: "action" },
+      { text: "Curiosity and unease", genre: "psychological" },
+      { text: "Wonder and discovery", genre: "adventure" },
+      { text: "Deep emotional connection", genre: "romance" },
     ],
   },
 ];
@@ -124,6 +142,89 @@ const genreDescriptions = {
   romance: "You appreciate relationships and emotional stories",
   supernatural: "You enjoy magic, spirits, and the unknown",
   comedy: "You love humor and lighthearted adventures.",
+};
+
+const recommendations = {
+  action: [
+    {
+      title: "Attack on Titan",
+      image: "./anime-recommendations/action-AOT.jpg",
+    },
+    {
+      title: "Jujustsu Kaisen",
+      image: "./anime-recommendations/action-JJK.jpg",
+    },
+    { title: "Black Clover", image: "./anime-recommendations/action-BC.jpg" },
+  ],
+  adventure: [
+    { title: "One Piece", image: "./anime-recommendations/adventure-OP.jpg" },
+    {
+      title: "Hunter x Hunter",
+      image: "./anime-recommendations/adventure-HxH.jpg",
+    },
+    {
+      title: "Fullmetal Alchemist: Brotherhood",
+      image: "./anime-recommendations/adventure-FMAB.jpg",
+    },
+  ],
+  psychological: [
+    {
+      title: "Death Note",
+      image: "./anime-recommendations/psychological-DN.jpg",
+    },
+    {
+      title: "Monster",
+      image: "./anime-recommendations/psychological-Mon.jpg",
+    },
+    {
+      title: "Orb: Movement of the Earth",
+      image: "./anime-recommendations/psychological-Orb.jpg",
+    },
+  ],
+  sports: [
+    {
+      title: "Hajime no Ippo",
+      image: "./anime-recommendations/sports-ippo.jpg",
+    },
+    { title: "Slam Dunk", image: "./anime-recommendations/sports-SD.jpg" },
+    { title: "Eyeshield 21", image: "./anime-recommendations/sports-eye.jpg" },
+  ],
+  romance: [
+    {
+      title: "Your Name",
+      image: "./anime-recommendations/romance-yourname.jpg",
+    },
+    {
+      title: "Your Lie in April",
+      image: "./anime-recommendations/romance-april.jpg",
+    },
+    { title: "Re-Life", image: "./anime-recommendations/romance-relife.jpg" },
+  ],
+  supernatural: [
+    {
+      title: "Bungo Stray Dogs",
+      image: "./anime-recommendations/supernatural-BSD.jpg",
+    },
+    {
+      title: "Mob Psycho 100",
+      image: "./anime-recommendations/supernatural-mob.jpg",
+    },
+    {
+      title: "JoJo Bizarre Adventure",
+      image: "./anime-recommendations/supernatural-jojo.jpg",
+    },
+  ],
+  comedy: [
+    { title: "Spy x Family", image: "./anime-recommendations/comedy-spy.jpg" },
+    {
+      title: "The Disastrous Life of Saiki K.",
+      image: "./anime-recommendations/comedy-saiki.jpg",
+    },
+    {
+      title: "Assassination Classroom",
+      image: "./anime-recommendations/comedy-class.jpg",
+    },
+  ],
 };
 
 let currentQuestion = 0;
@@ -166,14 +267,37 @@ function showResults() {
   }
   document.body.className = `genre-${selectedGenre}`;
 
-  const resultContainer = document.getElementById("result-container"); 
+  const resultContainer = document.getElementById("result-container");
   resultContainer.style.display = "block";
 
   resultContainer.innerHTML = `
     <h2>${userName}, your recommended genre is: ${selectedGenre.toUpperCase()}</h2>
     <p>${genreDescriptions[selectedGenre]}</p>`;
 
-  
+  const picks = recommendations[selectedGenre];
+  const cardContainer = document.createElement("div");
+  cardContainer.classList.add("card-container");
+
+  const frag = document.createDocumentFragment();
+
+  picks.forEach((anime) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    const image = document.createElement("img");
+    image.src = anime.image;
+    image.alt = anime.title;
+
+    const title = document.createElement("h3");
+    title.textContent = anime.title;
+
+    card.appendChild(image);
+    card.appendChild(title);
+
+    frag.appendChild(card);
+  });
+  cardContainer.appendChild(frag);
+  resultContainer.appendChild(cardContainer);
 }
 
 form.addEventListener("submit", (event) => {
