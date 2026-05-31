@@ -8,8 +8,7 @@ let userName = "";
 
 const questions = [
   {
-    question:
-      "You have a completely free weekend. What sounds most appealing?",
+    question: "You have a completely free weekend. What sounds most appealing?",
     answers: [
       { text: "Training hard to master a skill", genre: "sports" },
       { text: "Exploring a place you've never been", genre: "adventure" },
@@ -17,16 +16,25 @@ const questions = [
         text: "Pulling harmless pranks on friends",
         genre: "comedy",
       },
-      { text: "Investing a strange mystery nobody can explain", genre: "supernatural" },
+      {
+        text: "Investing a strange mystery nobody can explain",
+        genre: "supernatural",
+      },
     ],
   },
   {
     question: "Which type of protagonist do you find most interesting?",
     answers: [
       { text: "Someone willing to fight impossible odds", genre: "action" },
-      { text: "Someone trying to understand their own mind", genre: "psychological" },
+      {
+        text: "Someone trying to understand their own mind",
+        genre: "psychological",
+      },
       { text: "Someone searching for true love", genre: "romance" },
-      { text: "Someone with powers beyond normal understanding", genre: "supernatural" },
+      {
+        text: "Someone with powers beyond normal understanding",
+        genre: "supernatural",
+      },
     ],
   },
   {
@@ -41,10 +49,19 @@ const questions = [
   {
     question: "Which setting sounds most exciting?",
     answers: [
-      { text: "A world filled with ancient secrets and forgotten lands", genre: "adventure" },
-      { text: "A city where unusual paranormal events happen every day", genre: "supernatural" },
+      {
+        text: "A world filled with ancient secrets and forgotten lands",
+        genre: "adventure",
+      },
+      {
+        text: "A city where unusual paranormal events happen every day",
+        genre: "supernatural",
+      },
       { text: "A competitive arena where the best competes", genre: "sports" },
-      { text: "A tense battle of wits between geniuses", genre: "psychological" },
+      {
+        text: "A tense battle of wits between geniuses",
+        genre: "psychological",
+      },
     ],
   },
   {
@@ -53,7 +70,10 @@ const questions = [
       { text: "Rivals competing for a championship", genre: "sports" },
       { text: "Two people slowly falling for each other", genre: "romance" },
       { text: "Heroes battling a dangerous threat", genre: "action" },
-      { text: "A group surviving bizarre supernatural events", genre: "supernatural" },
+      {
+        text: "A group surviving bizarre supernatural events",
+        genre: "supernatural",
+      },
     ],
   },
   {
@@ -73,7 +93,10 @@ const questions = [
     answers: [
       { text: "The hero triumphs after a fierce struggle", genre: "action" },
       { text: "The characters find happiness together", genre: "romance" },
-      { text: "The mystery leaves you questioning everything", genre: "psychological" },
+      {
+        text: "The mystery leaves you questioning everything",
+        genre: "psychological",
+      },
       { text: "Everyone shares one last laugh", genre: "comedy" },
     ],
   },
@@ -82,7 +105,10 @@ const questions = [
     answers: [
       { text: "A martial arts tournament", genre: "action" },
       { text: "An expedition into uncharted territory", genre: "adventure" },
-      { text: "A magical festival filled with spirits and legends", genre: "supernatural" },
+      {
+        text: "A magical festival filled with spirits and legends",
+        genre: "supernatural",
+      },
       { text: "A school talent show full of funny moments", genre: "comedy" },
     ],
   },
@@ -99,8 +125,14 @@ const questions = [
     question: "Which power would you rather have?",
     answers: [
       { text: "Incredible combat abilities", genre: "action" },
-      { text: "The ability to communicate with supernatural beings", genre: "supernatural" },
-      { text: "The ability to always know the right strategy", genre: "psychological" },
+      {
+        text: "The ability to communicate with supernatural beings",
+        genre: "supernatural",
+      },
+      {
+        text: "The ability to always know the right strategy",
+        genre: "psychological",
+      },
       { text: "The courage to explore anywhere", genre: "adventure" },
     ],
   },
@@ -108,8 +140,11 @@ const questions = [
     question: "Which group would you join?",
     answers: [
       { text: "An elite sports team", genre: "sports" },
-      { text: "A guild of adventurersn", genre: "adventure" },
-      { text: "A club dedicated to helping people find love", genre: "romance" },
+      { text: "A guild of adventurers", genre: "adventure" },
+      {
+        text: "A club dedicated to helping people find love",
+        genre: "romance",
+      },
       { text: "A group of eccentric comedians", genre: "comedy" },
     ],
   },
@@ -285,8 +320,8 @@ function showResults() {
     card.classList.add("card");
 
     const image = document.createElement("img");
-    image.src = anime.image;
-    image.alt = anime.title;
+    image.setAttribute("src", anime.image)
+    image.setAttribute("alt", anime.title)
 
     const title = document.createElement("h3");
     title.textContent = anime.title;
@@ -298,6 +333,27 @@ function showResults() {
   });
   cardContainer.appendChild(frag);
   resultContainer.appendChild(cardContainer);
+
+  const resetBtn = document.createElement("button");
+  resetBtn.textContent = "Take Quiz Again";
+  resultContainer.appendChild(resetBtn);
+
+  resetBtn.addEventListener("click", (e) => {
+    const resultSection = resetBtn.parentElement;
+
+    resultSection.innerHTML = "";
+
+    currentQuestion = 0;
+    selectedGenre = null;
+
+    for(let genre in scores){
+        scores[genre] = 0;
+    }
+
+    document.querySelector("header").style.display = "block";
+    welcomeContainer.style.display = "block";
+    document.body.className = "genre-default";
+  });
 }
 
 form.addEventListener("submit", (event) => {
