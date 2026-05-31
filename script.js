@@ -302,58 +302,62 @@ function showResults() {
   }
   document.body.className = `genre-${selectedGenre}`;
 
-  const resultContainer = document.getElementById("result-container");
-  resultContainer.style.display = "block";
+  setTimeout(() => {
+    const resultContainer = document.getElementById("result-container");
+    resultContainer.style.display = "block";
 
-  resultContainer.innerHTML = `
+    resultContainer.innerHTML = `
     <h2>${userName}, your recommended genre is: ${selectedGenre.toUpperCase()}</h2>
     <p>${genreDescriptions[selectedGenre]}</p>`;
 
-  const picks = recommendations[selectedGenre];
-  const cardContainer = document.createElement("div");
-  cardContainer.classList.add("card-container");
+    setTimeout(() => {
+      const picks = recommendations[selectedGenre];
+      const cardContainer = document.createElement("div");
+      cardContainer.classList.add("card-container");
 
-  const frag = document.createDocumentFragment();
+      const frag = document.createDocumentFragment();
 
-  picks.forEach((anime) => {
-    const card = document.createElement("div");
-    card.classList.add("card");
+      picks.forEach((anime) => {
+        const card = document.createElement("div");
+        card.classList.add("card");
 
-    const image = document.createElement("img");
-    image.setAttribute("src", anime.image)
-    image.setAttribute("alt", anime.title)
+        const image = document.createElement("img");
+        image.setAttribute("src", anime.image);
+        image.setAttribute("alt", anime.title);
 
-    const title = document.createElement("h3");
-    title.textContent = anime.title;
+        const title = document.createElement("h3");
+        title.textContent = anime.title;
 
-    card.appendChild(image);
-    card.appendChild(title);
+        card.appendChild(image);
+        card.appendChild(title);
 
-    frag.appendChild(card);
-  });
-  cardContainer.appendChild(frag);
-  resultContainer.appendChild(cardContainer);
+        frag.appendChild(card);
+      });
+      cardContainer.appendChild(frag);
+      resultContainer.appendChild(cardContainer);
 
-  const resetBtn = document.createElement("button");
-  resetBtn.textContent = "Take Quiz Again";
-  resultContainer.appendChild(resetBtn);
+      const resetBtn = document.createElement("button");
+      resetBtn.textContent = "Take Quiz Again";
+      resultContainer.appendChild(resetBtn);
 
-  resetBtn.addEventListener("click", (e) => {
-    const resultSection = resetBtn.parentElement;
+      resetBtn.addEventListener("click", (e) => {
+        const resultSection = resetBtn.parentElement;
 
-    resultSection.innerHTML = "";
+        resultSection.innerHTML = "";
 
-    currentQuestion = 0;
-    selectedGenre = null;
+        currentQuestion = 0;
+        selectedGenre = null;
 
-    for(let genre in scores){
-        scores[genre] = 0;
-    }
+        for (let genre in scores) {
+          scores[genre] = 0;
+        }
 
-    document.querySelector("header").style.display = "block";
-    welcomeContainer.style.display = "block";
-    document.body.className = "genre-default";
-  });
+        document.querySelector("header").style.display = "block";
+        welcomeContainer.style.display = "block";
+        document.body.className = "genre-default";
+      });
+    }, 2500);
+  }, 1000);
 }
 
 form.addEventListener("submit", (event) => {
